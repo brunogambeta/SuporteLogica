@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Suporte Logica</string>
+    <string name="cnpjTelaInicial">Informe o CNPJ da empresa</string>
+    <string name="botaoEntrar">Entrar</string>
+    <string name="cnpjEmpresaChamado">CNPJ da Empresa</string>
+    <string name="razaoSocialEmpresa">Razão social da empresa</string>
+    <string name="nomeContatoChamado">Nome para contato</string>
+    <string name="telefoneContatoChamado">Telefone para contato</string>
+    <string name="descricaoProblemaChamado">Descrição do Problema / Dúvida</string>
+    <string name="GravarChamado">Gravar Chamado</string>
+    <string name="autorApp">App criado por Bruno Cesar Gambeta</string>
+    <string name="id_chamado">ID Chamado: 2020</string>
+</resources>
