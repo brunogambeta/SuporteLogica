@@ -29,7 +29,7 @@ public class ConfiguracaoAPI {
     public static Retrofit getRetrofit() {
 
         Gson gson = new GsonBuilder().setLenient().create();
-        Retrofit retornoRetrofit = new Retrofit.Builder()
+        retornoRetrofit = new Retrofit.Builder()
                 //.baseUrl(URL_API_INTERNO)
                 .baseUrl(URL_API_EXTERNO)
                 .addConverterFactory(GsonConverterFactory.create(gson))

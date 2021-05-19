@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".acitivty.ChamadoExistenteActivity"></activity>
-        <activity android:name=".acitivty.ChamadoActivity" />
+        <activity android:name=".acitivty.ChamadoActivity"></activity>
+        <activity android:name=".acitivty.ChamadoExistenteActivity" />
         <activity android:name=".acitivty.InicialActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

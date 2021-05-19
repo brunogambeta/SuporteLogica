@@ -47,7 +47,7 @@ public class InicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inicial);
 
         //Configuração dos campos inicais
-        cnpjTelaInicial = findViewById(R.id.editTextCNPJInicial);
+        inicalizarComponentes();
 
         //Inicialização das variaveis
         Button botaoEntrar = findViewById(R.id.buttonEntrar);
@@ -65,11 +65,17 @@ public class InicialActivity extends AppCompatActivity {
                     task.execute(urlExterna + tagGet + cnpj);
                     salvarCNPJPreferences(cnpj);
                 } else {
-                    Toast.makeText(InicialActivity.this, "Necessário digitar o CNPJ ou CPF", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InicialActivity.this, "Necessário digitar um CNPJ ou CPF", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
+
+    //Metodo para inicializar os componentes
+    private void inicalizarComponentes() {
+        cnpjTelaInicial = findViewById(R.id.editTextCNPJInicial);
+    }
+
     //Metodo usado para quando abrir o app, ja carregar o ultimo CNPJ informado.
     @Override
     protected void onStart() {
@@ -123,8 +129,8 @@ public class InicialActivity extends AppCompatActivity {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
         //Configurando AlertDialog
-        dialog.setTitle("Chamado Existente!");
-        dialog.setMessage("Atenção ja possui um chamado em aberto para esse CNPJ, aguarde ser atendido.\nDeseja adicionar mais um comentario nesse chamado?");
+        dialog.setTitle("Chamado existente!");
+        dialog.setMessage("Atenção já possui um chamado em aberto para este CNPJ/CPF, aguarde ser atendido.\nDeseja adicionar mais um comentário neste chamado ?");
 
         //Função de cancelamento do AlertDialog
         dialog.setCancelable(false);

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:padding="16dp"
     tools:context=".acitivty.ChamadoActivity">
 
     <ImageView
@@ -35,6 +36,7 @@
         android:gravity="center_horizontal"
         android:text="@string/cnpjEmpresaChamado"
         android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +54,7 @@
         android:gravity="center_horizontal"
         android:text="@string/razaoSocialEmpresa"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -70,6 +73,7 @@
         android:gravity="center_horizontal"
         android:text="@string/id_chamado"
         android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRazaoSocialEmpresaExistente" />
@@ -84,7 +88,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="266dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonGravarChamado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNumeroChamadoExistente">
@@ -106,6 +109,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/GravarChamado"
+        android:theme="@style/botaoPadrao"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -1,5 +1,7 @@
 package com.brunogambeta.suportelogica.acitivty;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.brunogambeta.suportelogica.R;
 import com.brunogambeta.suportelogica.api.APIService;
@@ -31,7 +31,6 @@ public class ChamadoActivity extends AppCompatActivity {
     private Button botaoGravarChamado;
     private String cnpjEmpresa, razaoSocial;
 
-
     //Configurações do retroFit
     private Retrofit retrofit = ConfiguracaoAPI.getRetrofit();
 
@@ -40,14 +39,8 @@ public class ChamadoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chamado);
 
-
         //Configurações de informações iniciais.
-        cnpjEmpresaChamado = findViewById(R.id.textViewCnpjEmpresaChamado);
-        razaoSocialEmpresaChamado = findViewById(R.id.textViewRazaoSocialEmpresa);
-        nomeContatoChamado = findViewById(R.id.editTextNomeContato);
-        telefoneContatoChamado = findViewById(R.id.editTextTelefoneContato);
-        descricaoProblemaChamado = findViewById(R.id.editTextDescricaoProblema);
-        botaoGravarChamado = findViewById(R.id.buttonGravarChamado);
+        inicializarComponentes();
 
         //Metodo para pegar os dados passados pela InicialActivity
         Bundle dados = getIntent().getExtras();
@@ -128,7 +121,14 @@ public class ChamadoActivity extends AppCompatActivity {
         Intent principal = new Intent(ChamadoActivity.this, InicialActivity.class);
         startActivity(principal);
     }
+
+    //Metodo para inicializar os componentes
+    private void inicializarComponentes() {
+        cnpjEmpresaChamado = findViewById(R.id.textViewCnpjEmpresaChamado);
+        razaoSocialEmpresaChamado = findViewById(R.id.textViewRazaoSocialEmpresa);
+        nomeContatoChamado = findViewById(R.id.editTextNomeContato);
+        telefoneContatoChamado = findViewById(R.id.editTextTelefoneContato);
+        descricaoProblemaChamado = findViewById(R.id.editTextDescricaoProblema);
+        botaoGravarChamado = findViewById(R.id.buttonGravarChamado);
+    }
 }
-
-
-

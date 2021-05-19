@@ -40,11 +40,7 @@ public class ChamadoExistenteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chamado_existente);
 
         //Configurações de informações iniciais.
-        cnpjEmpresaChamado = findViewById(R.id.textViewCnpjEmpresaChamadoExistente);
-        razaoSocialEmpresaChamado = findViewById(R.id.textViewRazaoSocialEmpresaExistente);
-        descricaoProblemaChamado = findViewById(R.id.editTextDescricaoProblemaExistente);
-        numeroChamadoExistente = findViewById(R.id.textViewNumeroChamadoExistente);
-        botaoGravarChamado = findViewById(R.id.buttonGravarChamadoExistente);
+        inicializarComponentes();
 
         //Metodo para pegar os dados passados pela InicialActivity
         Bundle dados = getIntent().getExtras();
@@ -55,7 +51,7 @@ public class ChamadoExistenteActivity extends AppCompatActivity {
         //Setando nos seus respectivos campos os dados enviados pela InicialActivity
         cnpjEmpresaChamado.setText("CNPJ: \n" + ValidaCNPJ.imprimeCNPJ(cnpjEmpresa));
         razaoSocialEmpresaChamado.setText("Razão Social: \n" + razaoSocial);
-        numeroChamadoExistente.setText("Chamado: \n"+numeroChamado);
+        numeroChamadoExistente.setText("Chamado: \n" + numeroChamado);
 
         //Atribuindo funcao ao botao de gravar chamado.
         botaoGravarChamado.setOnClickListener(new View.OnClickListener() {
@@ -68,11 +64,20 @@ public class ChamadoExistenteActivity extends AppCompatActivity {
                 if (!descricaoChamado.isEmpty()) {
                     atualizarChamado(descricaoChamado);
                 } else {
-                    Toast.makeText(ChamadoExistenteActivity.this, "Descrição do chamado não informada!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChamadoExistenteActivity.this, "Descrição do chamado não informada, verifique!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+    }
+
+    //Metodo para inicializar os componentes
+    private void inicializarComponentes() {
+        cnpjEmpresaChamado = findViewById(R.id.textViewCnpjEmpresaChamadoExistente);
+        razaoSocialEmpresaChamado = findViewById(R.id.textViewRazaoSocialEmpresaExistente);
+        descricaoProblemaChamado = findViewById(R.id.editTextDescricaoProblemaExistente);
+        numeroChamadoExistente = findViewById(R.id.textViewNumeroChamadoExistente);
+        botaoGravarChamado = findViewById(R.id.buttonGravarChamadoExistente);
     }
 
     //Netodo para atualizar a descricao do chamado
@@ -94,7 +99,6 @@ public class ChamadoExistenteActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(ChamadoExistenteActivity.this, "Chamado alterado com sucesso! ", Toast.LENGTH_SHORT).show();
                     telaPrincipal();
-
                 }
             }
 
@@ -105,6 +109,7 @@ public class ChamadoExistenteActivity extends AppCompatActivity {
         });
 
     }
+
     //Metodo para abrir a tela principal do app.
     public void telaPrincipal() {
         Intent principal = new Intent(ChamadoExistenteActivity.this, InicialActivity.class);
